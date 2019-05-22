@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Govt College online Form
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='author' content='colorlib.com')
+  // MATERIAL DESIGN ICONIC FONT
+  // <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  link(rel='stylesheet' type='text/css' href='/home/arslanmughal99/Desktop/RegFormAPI/public/css/errors.css')
+  link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+div
+  h2.error-heading
+    | :( Fail to Submit Form Due to Following reason
+.ul-div
+    ul.collection.reason-ul
+        each reason in posError    
+            li= reason
+   
+script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+script(src='/home/arslanmughal99/Desktop/RegFormAPI/public/js/jquery.steps.js')

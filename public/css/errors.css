@@ -1,0 +1,21 @@
+body{
+    background-image: url("../images/Cover_final.jpg");
+    background-size: cover;     
+    background-repeat: no-repeat;
+}
+
+.reason-ul{
+    background-color: rgba(25, 255, 255, 0);
+}
+
+.ul-div{
+    margin-top: 100px;
+}
+
+.error-heading{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+}

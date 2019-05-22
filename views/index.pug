@@ -1,0 +1,184 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Online College Registration Form
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='author' content='colorlib.com')
+  // MATERIAL DESIGN ICONIC FONT
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+  link(rel='stylesheet' href='fonts/material-design-iconic-font/css/material-design-iconic-font.css')
+  // STYLE CSS
+  link(rel='stylesheet' href='css/style.css')
+
+.wrapper
+  img.logo-img(src='./images/Logo_1.png')
+  form#add-form-data.form-position(method='POST' action='/register' enctype='multipart/form-data')
+    #wizard
+      // Class and subject selection step
+      input(type="text" name="request_id" value=request_id_number hidden)
+      //- input(type="text" name="student_id" value="serialID" hidden)
+      h4
+      section.section-div
+        h2.section-heading.addmission-heading.text-center Addmission Form
+        h6.section-heading.addmission-session.text-center Session 2019-2020
+        h5.section-heading.addmission-section.text-center Class And Subject Section
+        // SUBJECT SELECTION LIST
+        h4(for='sel1') Select Class
+        .form-group.sub-list
+          // <label for="sel1">Select list:</label>
+          .form-holder
+            select#sel-class.form-control(name='subject_selection')
+              option(value='MA') M.A
+              option(value='MSC') M.Sc
+              option(value='BA') B.A
+              option(value='BSC') B.S.C
+              option(value='BCS') B.C.S (computer science)
+        .form-group.sub-list
+          // <label for="sel1">Select list:</label>
+          .form-holder
+            select#sel-year.form-control(name='part_selection')
+              option(value=1) part-1
+              option(value=2) part-2
+              option(value=3) part-3
+              option(value=4) part-4
+        .form-row.optional-subjests
+          .form-holder
+            // FOR M.A STUDENTS
+            select#opt-sub-1-MA.form-control(name='subject_selection_MA')
+              option(value='MA-ENG') M.A English
+              option(value='MA-URD') M.A Urdu
+            // FOR M.Sc STUDENTS
+            select#opt-sub-1-MSC.form-control(name='subject_selection_MSC')
+              option(value='MSC-BOT') M.Sc Botany
+              option(value='MSC-CHE') M.Sc Chemistry
+              option(value='MSC-MAT') M.Sc Mathematics
+              option(value='MSC-PHY') M.Sc Phiysics
+              option(value='MSC-ZOO') M.Sc Zoology
+      // PERSONAL INFO SECTION
+      h4
+      section.section-div
+        h2.section-heading.std-info-heading.text-center Personal info
+        h4.section-heading.std-info-heading-std.text-center (Student)
+        .form-header
+          .avartar
+            a(href='#')
+              img#student-avatar.avartar-img(src='https://www.ischool.berkeley.edu/sites/default/files/default_images/avatar.jpeg' alt='')
+            .avartar-picker
+              input#file-1.inputfile(type='file' name='Imgfile' value='' onchange='readURL(this);' data-multiple-caption='{count} files selected' multiple='')
+              label(for='file-1')
+                i.zmdi.zmdi-camera
+                span Choose Picture
+          .form-group
+            .form-holder.active
+              input.form-control.required(type='text' placeholder='Full Name' name='student_name' required)
+            .form-holder
+              input.form-control.required(type='text' placeholder="Father's Name" name='student_f_name' required)
+            .form-holder
+              input.form-control.required(type='text' placeholder='Surname' name='student_surname' required)
+        .form-header.cnic-blood-div
+          .form-row.blood-g-div
+            .form-holder
+              select#sel-blood-group.form-control.blood-group-sel(name='student_blood_group')
+                option(value='OP') O+
+                option(value='ON') O-
+                option(value='AP') A+
+                option(value='AN') A-
+                option(value='BP') B+
+                option(value='BN') B-
+                option(value='ABP') AB+
+                option(value='ABN') AB-
+          .form-row.CNIC-DIV
+            .form-holder
+              input#student-cnic-num.form-control.guad-CNIC-NUM.required(type='text' placeholder='CNIC number' name='student_cnic_num')
+        .form-holder
+          textarea.form-control.postal-addr.required(type='text' placeholder='Postal Address' name='student_postal_addr')
+      // PERSONAL INFO 2
+      h4
+      section.section-div
+        h2.section-heading.std-info-heading.text-center Personal info
+        h4.section-heading.std-info-heading-std.text-center (Student)
+        .form-header
+          .form-row
+            label.date-label Date Of Birth mm/dd/yyyy
+            .form-holder
+              input#date-of-birth-sel.form-control.date-of-birth(type='date' name='student_dateof_birth')
+            .form-holder
+              input.form-control.guad-input.required(type='text' placeholder='Religion' name='student_religion')
+          .form-row.pob-div
+            .form-holder
+              input.form-control.guad-input.required(type='text' placeholder='Place Of Birth' name='place_of_birth')
+            .form-holder
+              input.form-control.guad-input.required(type='text' placeholder='Nationality' name='student_nationality')
+        .form-header
+          .form-row
+            .form-holder
+              select#sel-blood-group.form-control.social-status(name='student_social_status')
+                option(value='unmarried') unmarried
+                option(value='married') married
+          .form-row.emplayee-div
+            .form-holder
+              select#sel-blood-group.form-control.social-status(name='student_employee_status')
+                option(value='No') I&apos;m not Employee
+                option(value='Yes') I&apos;m Employee
+        .form-group.sub-list
+          input.form-control(type='email' placeholder='Personal Email' autocomplete='email' name='student_email')
+        .form-group.sub-list
+          input.form-control(type='text' placeholder='Phone Number e.g : 03121234567' autocomplete='mobile' length='11' name='student_phone_num')
+      
+      // GARDIAN INFO SECTION
+      h4
+      section.section-div
+        h2.section-heading.std-info-heading.text-center Background info
+        h4.section-heading.std-info-heading-std.text-center (Father/Guardian)
+        .form-header
+          .form-row
+            .form-holder
+              input.form-control.guad-input(type='text' placeholder="Father's Name (if alive)" name='fathers_name_alive')
+            .form-holder
+              input.form-control.guad-input(type='text' placeholder='Guardian (not father)' name='guardian_name')
+          .form-row
+            .form-holder
+              input.form-control.guad-input(type='text' placeholder='CNIC Father' name='fathers_cnic_num')
+            .form-holder
+              input.form-control.guad-input(type='text' placeholder='CNIC Guardian' name='guardian_cnic_num')
+        .form-holder
+          .form-group.sub-list
+            input.form-control(type='text' placeholder="Father's Occupation" name='father_occupation')
+        .form-holder
+          .form-group.sub-list
+            input.form-control(type='text' placeholder="Guardian's Occupation" name='guardian_occupation')
+        .form-holder
+          textarea.form-control.postal-addr(type='text' placeholder="Occupation Address of Father's if alive" name='occp_addr')
+      // Guardian/ Father info 2
+      h4
+      section
+        h2.section-heading.std-info-heading.text-center Background info
+        h4.section-heading.std-info-heading-std.text-center (Father/Guardian)
+        .form-holder
+          .form-group.sub-list
+            input.form-control.required(type='text' placeholder="Father's Or Home Phone Number" name='emergency_contact')
+        .form-holder
+          .form-group.sub-list
+            input.form-control(type='text' placeholder="Guardian's Phone Number" name='guardian_contact')
+        .form-holder
+          .form-group.sub-list
+            input.form-control(type='email' placeholder='Guardian or Any Family Member Email' name='emergency_email')
+     
+      // Warning Secton
+      h4
+      section.section-div
+        .text-center
+          img.warrning-img(src='https://img.icons8.com/color/480/000000/error.png')
+        h2.section-heading.warrning-heading.text-center.font-weight-bold Warrning
+        p.text-center.warnning-message
+          | Information once submited can not be change. Please Check once again if there is any mistake
+          | in case of any wrong or fake infomation College has rights to drop the application
+        .custom-control.custom-checkbox.text-center.agree-checkbox
+          input#customCheck1.custom-control-input.agree-checkbox-check(type='checkbox')
+          label.custom-control-label(for='customCheck1') I Agree With Above Warrning
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous')
+script(src='js/jquery-3.3.1.min.js')
+// JQUERY STEP
+script(src='js/jquery.steps.js')
+script(src='js/main.js')
+// Template created and distributed by Colorlib
