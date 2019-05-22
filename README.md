@@ -22,13 +22,13 @@ npm install  # This will install all dependencies from package.json
 
 ###### Setting up MonoDB:
 
-Since i have used [mongoDB]([https://www.mongodb.com/](https://www.mongodb.com/) as Database so there fore there should be a local instance of mongoDB running on port `30270` or if you are using remote instance or differnt port change the connection string in `./db/init.js # on line 5` file respectivly .
+Since i have used [mongoDB]([https://www.mongodb.com/](https://www.mongodb.com/)) as Database so there fore there should be a local instance of mongoDB running on port `30270` or if you are using remote instance or differnt port change the connection string in `./db/init.js # on line 5` file respectivly .
 
 
 
 #### Running Application:
 
-Once mongoDB is up and running next step is you explicitly set a the port on which [express]([https://expressjs.com/](https://expressjs.com/) need to listen which can be set as enviromental variable which is `NODE_PORT` if no port is define than by default express will listen on port `3000` . The Follwoing command can be used to run on respective OS.
+Once mongoDB is up and running next step is you explicitly set a the port on which [express]([https://expressjs.com/](https://expressjs.com/)) need to listen which can be set as enviromental variable which is `NODE_PORT` if no port is define than by default express will listen on port `3000` . The Follwoing command can be used to run on respective OS.
 
 ```bash
 # On Linux
